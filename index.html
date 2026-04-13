@@ -3,10 +3,10 @@
 <head>
     <title>Buy Tickets</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: black; font-family: sans-serif; }
-        #overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; align-items: center; justify-content: center; z-index: 100; }
-        #ticket-btn { padding: 20px 40px; font-size: 24px; font-weight: bold; color: white; background-color: #e50914; border: none; border-radius: 50px; cursor: pointer; }
-        video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: black; }
+        #overlay { position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; background: black; display: flex; justify-content: center; align-items: center; }
+        #ticket-btn { padding: 20px 40px; font-size: 24px; background: #e50914; color: white; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; }
+        video { position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; display: none; }
     </style>
 </head>
 <body>
@@ -15,23 +15,18 @@
         <button id="ticket-btn" onclick="launch()">CLICK TO BUY TICKETS!</button>
     </div>
 
-    <video id="myVid" loop>
+    <video id="vid" loop>
         <source src="Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster).mp4" type="video/mp4">
     </video>
-
-    <audio id="myAud" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
 
     <script>
         function launch() {
             document.getElementById('overlay').style.display = 'none';
-            var v = document.getElementById('myVid');
-            var a = document.getElementById('myAud');
+            var v = document.getElementById('vid');
             v.style.display = 'block';
             v.play();
-            a.play();
         }
     </script>
+
 </body>
 </html>
